@@ -4,7 +4,7 @@ import { transformPhoneNumber } from "../utils/formater";
 import { bcryptHash } from "../utils/hashing";
 
 export const getUsers = () => {
-  return prisma.app_Users.findMany({
+  return prisma.users.findMany({
     select: {
       id: true,
       created_at: true,
@@ -20,7 +20,7 @@ export const getUsers = () => {
 };
 
 export const getUser = async ({ email, phone }: { email: string, phone: string; }) => {
-  return prisma.app_Users.findFirst({
+  return prisma.users.findFirst({
     where: {
       OR: [
         { email: { equals: email.toLowerCase() } },
@@ -31,7 +31,7 @@ export const getUser = async ({ email, phone }: { email: string, phone: string; 
 };
 
 export const createUser = async (data: UserTypes) => {
-  return prisma.app_Users.create({
+  return prisma.users.create({
     data: {
       email: data.email!,
       first_name: data.first_name,
@@ -45,7 +45,7 @@ export const createUser = async (data: UserTypes) => {
 };
 
 export const getUserById = async (data: UserTypes) => {
-  return prisma.app_Users.findFirst({
+  return prisma.users.findFirst({
     where: {
       id: data.id!
     }

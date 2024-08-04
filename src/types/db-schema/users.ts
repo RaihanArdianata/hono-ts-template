@@ -1,3 +1,3 @@
-import { App_Users } from "@prisma/client";
+import { users } from "@prisma/client";
 
-export type UserTypes = Partial<App_Users>;
+export type UserTypes = Partial<users>;
