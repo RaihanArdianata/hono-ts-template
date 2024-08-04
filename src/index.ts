@@ -33,10 +33,6 @@ app.use(
   })
 );
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!');
-});
-
 app.route('/api', routes); // Ensure routes are correct and match
 
 app.onError(errorHandler);

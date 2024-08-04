@@ -34,7 +34,3 @@ export const login = catchAsync(async (c) => {
     throw new ApiError(HttpStatus.UNAUTHORIZED, { message: "unauthorize" });
   }
 });
-
-// customer
-
-// operator
