@@ -13,10 +13,10 @@ export const seedRoles = async () => {
   });
 
   const appOwnerRole = await prisma.roles.upsert({
-    where: { name: 'APP_OWNER' },
+    where: { name: 'USER' },
     update: {},
     create: {
-      name: 'APP_OWNER',
+      name: 'USER',
       description: 'App owner role with access to manage own apps',
     },
   });
